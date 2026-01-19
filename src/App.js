@@ -24,11 +24,11 @@ import {
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzBkG1WdRxbI6cEMd6K_VhVwc0-T71zfkArvLhMME-C2rW84EgMyR-DzCG8noRtQuDA/exec";
 
 // Global variables provided by environment
-const firebaseConfig = JSON.parse(__firebase_config);
+const firebaseConfig = JSON.parse(process.env.FIREBASE_CONFIG);
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
-const appId = typeof __app_id !== 'undefined' ? __app_id : 'luminara-2022-reunion';
+onst appId = process.env.APP_ID || 'luminara-2022-reunion';
 
 const FluidSmokeEffect = memo(() => {
   const canvasRef = useRef(null);
