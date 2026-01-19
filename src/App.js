@@ -24,7 +24,7 @@ import {
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzBkG1WdRxbI6cEMd6K_VhVwc0-T71zfkArvLhMME-C2rW84EgMyR-DzCG8noRtQuDA/exec";
 
 // Global variables provided by environment
-const firebaseConfig = JSON.parse(process.env.FIREBASE_CONFIG);
+const firebaseConfig = JSON.parse(process.env.REACT_APP_FIREBASE_CONFIG);
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
